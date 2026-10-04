@@ -1,11 +1,118 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Teste</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Monitoramento</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style.css">
+
 </head>
 <body>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima voluptatem accusamus laboriosam ipsa blanditiis dolorem quam eum quaerat nobis officiis!</p>
+  <div class="wrap">
+ 
+    <header class="top">
+      <a class="brand" href="#">monitoramento/nginx</a>
+      <span class="status" role="status"><i aria-hidden="true"></i>Nginx respondendo</span>
+    </header>
+ 
+    <main>
+      <div class="hero">
+        <h1>Sua aplicação sempre à vista.</h1>
+        <p class="lead">
+          Um Nginx rodando em Docker, observado por cinco serviços que coletam métricas,
+          testam a disponibilidade de fora e mostram tudo em um dashboard.
+        </p>
+        <div class="actions">
+          <a class="btn primary" href="http://localhost:3000">Abrir o Grafana</a>
+          <a class="btn ghost" href="http://localhost:9090">Abrir o Prometheus</a>
+        </div>
+ 
+        <svg class="trace" viewBox="0 0 1200 140" preserveAspectRatio="none" aria-hidden="true">
+          <path class="base" d="M0 90 H1200"/>
+          <path class="line" d="M0 90 H180 L205 90 L225 40 L250 125 L275 20 L300 90 H520
+                                 L545 90 L565 55 L590 115 L615 30 L640 90 H860
+                                 L885 90 L905 45 L930 120 L955 25 L980 90 H1200"/>
+        </svg>
+      </div>
+ 
+      <section id="stack">
+        <h2>Como os dados chegam ao dashboard</h2>
+        <p class="section-intro">
+          Duas fontes de informação alimentam o Prometheus: o que o Nginx conta por dentro
+          e o que o Blackbox vê por fora.
+        </p>
+ 
+        <div class="flow">
+          <div class="stage">
+            <h3>Aplicação</h3>
+            <div class="node">
+              <div class="node-name"><span class="dot" style="background:var(--c-nginx)"></span>Nginx</div>
+              <p>Serve esta página e expõe as estatísticas de conexões e requisições.</p>
+              <span class="port">porta 8080</span>
+            </div>
+          </div>
+ 
+          <div class="stage">
+            <h3>Coleta</h3>
+            <div class="node">
+              <div class="node-name"><span class="dot" style="background:var(--c-exporter)"></span>Nginx Exporter</div>
+              <p>Traduz as estatísticas do Nginx para o formato do Prometheus.</p>
+              <span class="port">porta 9113</span>
+            </div>
+            <div class="node">
+              <div class="node-name"><span class="dot" style="background:var(--c-blackbox)"></span>Blackbox Exporter</div>
+              <p>Acessa a aplicação de fora e confirma se ela está disponível.</p>
+              <span class="port">porta 9115</span>
+            </div>
+          </div>
+ 
+          <div class="stage">
+            <h3>Armazenamento</h3>
+            <div class="node">
+              <div class="node-name"><span class="dot" style="background:var(--c-prom)"></span>Prometheus</div>
+              <p>Busca as métricas em intervalos fixos e guarda o histórico.</p>
+              <span class="port">porta 9090</span>
+            </div>
+          </div>
+ 
+          <div class="stage">
+            <h3>Visualização</h3>
+            <div class="node">
+              <div class="node-name"><span class="dot" style="background:var(--c-grafana)"></span>Grafana</div>
+              <p>Transforma as métricas em gráficos e painéis.</p>
+              <span class="port">porta 3000</span>
+            </div>
+          </div>
+        </div>
+      </section>
+ 
+      <section id="acesso">
+        <h2>Acesse cada serviço</h2>
+        <div class="links">
+          <a class="link" style="--accent:var(--c-grafana)" href="http://localhost:3000">
+            <b>Grafana</b><span>Dashboards e gráficos</span>
+          </a>
+          <a class="link" style="--accent:var(--c-prom)" href="http://localhost:9090">
+            <b>Prometheus</b><span>Consultas e alvos monitorados</span>
+          </a>
+          <a class="link" style="--accent:var(--c-exporter)" href="http://localhost:9113/metrics">
+            <b>Nginx Exporter</b><span>Métricas do Nginx</span>
+          </a>
+          <a class="link" style="--accent:var(--c-blackbox)" href="http://localhost:9115">
+            <b>Blackbox Exporter</b><span>Resultados dos testes</span>
+          </a>
+        </div>
+      </section>
+    </main>
+ 
+    <footer>
+      <span>Nginx · Nginx Exporter · Blackbox Exporter · Prometheus · Grafana</span>
+      <span>Tudo orquestrado com Docker Compose</span>
+    </footer>
+ 
+  </div>
 </body>
 </html>
