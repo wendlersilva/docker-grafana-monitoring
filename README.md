@@ -53,8 +53,8 @@ docker-grafana-monitoring/
 │
 ├── nginx/
 │   ├── index.html
-│   └── nginx.conf
-│
+│   ├── nginx.conf
+│   └── style.css
 ├── prometheus/
 │   └── prometheus.yml
 │
