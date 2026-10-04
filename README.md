@@ -1,4 +1,4 @@
-# 🐳 Docker + Prometheus + Grafana Monitoring
+## 🐳 Docker + Prometheus + Grafana Monitoring
 
 [![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)](https://www.docker.com/)
 [![Docker Compose](https://img.shields.io/badge/Docker%20Compose-2496ED?logo=docker&logoColor=white)](https://docs.docker.com/compose/)
@@ -11,7 +11,7 @@ Projeto de monitoramento de uma aplicação web executando em **container Docker
 
 ---
 
-## 🎯 Objetivo
+### 🎯 Objetivo
 
 Este laboratório foi desenvolvido com o objetivo de praticar conceitos de:
 
@@ -30,7 +30,7 @@ A ideia principal é construir um ambiente simples no qual uma aplicação Nginx
 
 ---
 
-## 🛠️ Tecnologias utilizadas
+### 🛠️ Tecnologias utilizadas
 
 | Tecnologia                | Função                               |
 | ------------------------- | ------------------------------------ |
@@ -44,7 +44,7 @@ A ideia principal é construir um ambiente simples no qual uma aplicação Nginx
 
 ---
 
-## 📁 Estrutura do projeto
+### 📁 Estrutura do projeto
 
 ```text
 docker-grafana-monitoring/
@@ -63,9 +63,9 @@ docker-grafana-monitoring/
 
 ---
 
-## 📄 Arquivos principais
+### 📄 Arquivos principais
 
-### `docker-compose.yml`
+#### `docker-compose.yml`
 
 Define todos os serviços utilizados no laboratório:
 
@@ -123,9 +123,9 @@ Isso faz com que o Prometheus consulte os targets a cada 5 segundos.
 
 ---
 
-# 🚀 Como executar o projeto
+### 🚀 Como executar o projeto
 
-## 1. Pré-requisitos
+#### 1. Pré-requisitos
 
 É necessário possuir:
 
@@ -138,14 +138,9 @@ Verifique a instalação:
 ```powershell
 docker --version
 ```
-
-```powershell
-docker compose version
-```
-
 ---
 
-## 2. Clonar o repositório
+#### 2. Clonar o repositório
 
 ```powershell
 git clone https://github.com/wendlersilva/docker-grafana-monitoring
@@ -159,7 +154,7 @@ cd docker-grafana-monitoring
 
 ---
 
-## 3. Iniciar os containers
+#### 3. Iniciar os containers
 
 Execute:
 
@@ -187,11 +182,11 @@ grafana
 
 ---
 
-# 🌐 Acessando os serviços
+### 🌐 Acessando os serviços
 
 Após iniciar o ambiente, os serviços podem ser acessados localmente.
 
-### Nginx
+#### Nginx
 
 ```text
 http://localhost:8080
@@ -201,7 +196,7 @@ Página web da aplicação.
 
 ---
 
-### Nginx Status
+#### Nginx Status
 
 ```text
 http://localhost:8080/stub_status
@@ -211,7 +206,7 @@ Endpoint utilizado pelo Nginx Exporter.
 
 ---
 
-### Nginx Exporter
+#### Nginx Exporter
 
 ```text
 http://localhost:9113/metrics
@@ -221,7 +216,7 @@ Endpoint que disponibiliza as métricas do Nginx no formato Prometheus.
 
 ---
 
-### Prometheus
+#### Prometheus
 
 ```text
 http://localhost:9090
@@ -231,27 +226,13 @@ Interface web para consultar as métricas coletadas.
 
 ---
 
-### Grafana
+#### Grafana
 
 ```text
 http://localhost:3000
 ```
 
 Interface utilizada para criação e visualização dos dashboards.
-
----
-
-## 🧰 Tecnologias
-
-```text
-Docker
-Docker Compose
-Nginx
-Prometheus
-Grafana
-Nginx Prometheus Exporter
-Blackbox Exporter
-```
 
 ---
 
