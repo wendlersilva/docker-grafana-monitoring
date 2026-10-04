@@ -33,6 +33,12 @@ services:
     volumes:
       - grafana_data:/var/lib/grafana
 
+  blackbox-exporter:
+    image: prom/blackbox-exporter:latest
+    container_name: blackbox-exporter
+    ports:
+      - "9115:9115"
+
 volumes:
   prometheus_data:
   grafana_data:
