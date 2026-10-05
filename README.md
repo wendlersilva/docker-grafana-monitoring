@@ -79,7 +79,7 @@ Também define os volumes utilizados para persistência dos dados do Prometheus 
 
 ---
 
-### `nginx/nginx.conf`
+#### `nginx/nginx.conf`
 
 Arquivo responsável pela configuração do Nginx.
 
@@ -93,7 +93,7 @@ Esse endpoint fornece informações básicas sobre as conexões do Nginx para qu
 
 ---
 
-### `nginx/index.html`
+#### `nginx/index.html`
 
 Página HTML utilizada como aplicação web de teste.
 
@@ -101,7 +101,7 @@ Exibe uma página simples indicando que o Nginx está sendo executado em um cont
 
 ---
 
-### `prometheus/prometheus.yml`
+#### `prometheus/prometheus.yml`
 
 Arquivo responsável pela configuração do Prometheus.
 
